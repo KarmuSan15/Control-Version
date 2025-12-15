@@ -247,7 +247,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.4120909, b: 0.216981, a: 1}
+  m_Color: {r: 0.92572933, g: 0.21568626, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -285,6 +285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerzaMovimiento: 5
+  fuerzaDash: 10
+  cooldownDash: 1
   tipoControl: 1
 --- !u!1 &1758551242
 GameObject:
@@ -657,7 +659,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.2626007, g: 0.21568626, b: 1, a: 1}
+  m_Color: {r: 0.946528, g: 1, b: 0.21568626, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -695,6 +697,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerzaMovimiento: 5
+  fuerzaDash: 10
+  cooldownDash: 1
   tipoControl: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
