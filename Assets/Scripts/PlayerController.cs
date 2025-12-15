@@ -10,7 +10,7 @@ public class MovimientoBola2D : MonoBehaviour
     public float cooldownDash = 1f;
 
     private float tiempoUltimoDash;
-
+    //dash añadido
     public enum TipoControl
     {
         WASD,
