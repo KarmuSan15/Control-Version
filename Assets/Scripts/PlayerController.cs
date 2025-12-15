@@ -2,7 +2,14 @@ using UnityEngine;
 
 public class MovimientoBola2D : MonoBehaviour
 {
+    [Header("Movimiento")]
     public float fuerzaMovimiento = 5f;
+
+    [Header("Dash")]
+    public float fuerzaDash = 10f;
+    public float cooldownDash = 1f;
+
+    private float tiempoUltimoDash;
 
     public enum TipoControl
     {
@@ -14,6 +21,7 @@ public class MovimientoBola2D : MonoBehaviour
     public TipoControl tipoControl = TipoControl.WASD;
 
     private Rigidbody2D rb;
+    private Vector2 ultimaDireccion;
 
     void Start()
     {
@@ -39,6 +47,20 @@ public class MovimientoBola2D : MonoBehaviour
 
         Vector2 direccionMovimiento = new Vector2(inputHorizontal, inputVertical);
 
+        // Guardamos la última dirección válida
+        if (direccionMovimiento != Vector2.zero)
+        {
+            ultimaDireccion = direccionMovimiento.normalized;
+        }
+
+        // Movimiento normal
         rb.AddForce(direccionMovimiento * fuerzaMovimiento);
+
+        // Dash al presionar Espacio
+        if (Input.GetKey(KeyCode.Space) && Time.time >= tiempoUltimoDash + cooldownDash)
+        {
+            rb.AddForce(ultimaDireccion * fuerzaDash, ForceMode2D.Impulse);
+            tiempoUltimoDash = Time.time;
+        }
     }
 }
